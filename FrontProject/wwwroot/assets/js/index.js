@@ -1,12 +1,4 @@
-const sortClick = (e, name)=>{
-  $(e).siblings().css({color: "#000000"})
-  $(e).css({color: "#f34f3f"})
-  const targets = document.querySelectorAll(`.flowers .flowers-item`).forEach(item => item.style.display = 'block');
-  if(name)
-  document.querySelectorAll(`.flowers .flowers-item:not(.${name})`).forEach(element => {
-    element.style.display = "none"
-  });
-}
+
 
 
 $(document).ready(function () {
@@ -133,7 +125,50 @@ $(document).ready(function () {
     .html('<i class="fas fa-long-arrow-alt-right fa-2x"></i>');
   $(".owl-prev")
     .children()
-    .html('<i class="fas fa-long-arrow-alt-left fa-2x"></i>');
+      .html('<i class="fas fa-long-arrow-alt-left fa-2x"></i>');
+
+    //$(document).on("click", ".flower-name", function (e) {
+    //    e.preventDefault();
+    //    /*alert(this.attr('id'));*/
+    //    console.log("salam qurbaga")
+
+    //});
+    //$(".flower-name").click(function (e) {
+    //    console.log("salam medine");
+    //})
+
+    function GetBasketItems() {
+
+        $.ajax({
+            type: 'get',
+            url: "/Basket/Getbasket",
+
+            success: function (response) {
+
+
+                console.log(response);
+            },
+        });
+    }
+
+    $(".addToCart").click(function (e) {
+        const id = $(this).attr('id');
+        console.log(id);
+
+        $.ajax({
+            type: 'post',
+            url: "/Basket/AddToBasket/?id=" + id,
+            
+            success: function (response) {
+
+                GetBasketItems();
+                console.log(response);
+            },
+        });
+
+    });
+
+
 });
 
 
@@ -249,12 +284,25 @@ let deleteFlower = document.querySelector(".fa-times");
 //  let basket = JSON.parse(localStorage.getItem("basket"));
 //  addItemToBasketList(basket);
 //  productCount(basket);
-//  totalPrice(basket);
+////  totalPrice(basket);
+////}
+
+
+//const { log } = require("node:console");
+//const { cwd } = require("process");
+
+//const sortClick = (e, name) => {
+//    $(e).siblings().css({ color: "#000000" })
+//    $(e).css({ color: "#f34f3f" })
+//    const targets = document.querySelectorAll(`.flowers .flowers-item`).forEach(item => item.style.display = 'block');
+//    if (name)
+//        document.querySelectorAll(`.flowers .flowers-item:not(.${name})`).forEach(element => {
+//            element.style.display = "none"
+//        });
 //}
 
+//window.addEventListener('scroll', function(){
+//  if(window.scrollY <= 554){
 
-window.addEventListener('scroll', function(){
-  if(window.scrollY <= 554){
-
-  }
-})
+//  }
+//})

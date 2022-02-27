@@ -1,0 +1,60 @@
+﻿@model List<Slider>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="table-responsive pt-3">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>
+                    Id
+                </th>
+                <th>
+                    Title
+                </th>
+                <th>
+                    Description
+                </th>
+                <th>
+                    Image
+                </th>
+
+                <th>
+                    Action
+                </th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (Slider item in Model)
+            {
+            <tr class="table-success">
+                <td>
+                    @item.Id
+                </td>
+                <td>
+                    @Html.Raw(item.Title)
+                </td>
+                <td style="width:300px">
+                    @item.Desc
+                </td>
+                <td>
+                    <img style="width:250px;height:250px" src="~/assets/images/@item.Image"/>
+                </td>
+                <td>
+                    <a class="btn btn primary" asp-controller="Slider" asp-action="Deteil" asp-route-id="@item.Id">Detail</a>
+                    <a class="btn btn warning" asp-controller="Slider" asp-action="Update" asp-route-id="@item.Id">Update</a>
+                    <a class="btn btn danger" asp-controller="Slider" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+
+                </td>
+
+            </tr>
+
+            }
+
+        </tbody>
+    </table>
+</div>
+

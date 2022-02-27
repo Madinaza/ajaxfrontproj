@@ -48,5 +48,44 @@ namespace FrontProject.Areas.Dashboard.Controllers
             return View(category);
         }
 
+        public async Task<IActionResult>Update(int id)
+        {
+            Category category = await _context.Categories.FindAsync(id);
+            if (category == null) return NotFound();
+            return View(category);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult>Update(int id,Category category)
+        {
+            bool Isexsist = await _context.Categories.AnyAsync(c => c.Id == id);
+            if(!Isexsist) return NotFound();
+            if (!ModelState.IsValid) return View();
+
+            _context.Categories.Update(category);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+
+        }
+
+        public async Task<IActionResult>Delete(int id)
+        {
+            Category category = await _context.Categories.FindAsync(id);
+            if (category == null) return NotFound();
+            return View(category);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [ActionName("Delete")]
+        public async Task<IActionResult> DeleteCategory(int id)
+        {
+            Category category = await _context.Categories.FindAsync(id);
+            if (category == null) return NotFound();
+            if (!ModelState.IsValid) return View();
+            _context.Categories.Remove(category);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+
+        }
     }
 }

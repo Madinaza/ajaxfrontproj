@@ -19,10 +19,65 @@ namespace FrontProject.Controllers
             _context = context;
         }
 
-        public async Task<IActionResult> AddToBasket(int Id)
+        //public async Task<IActionResult> AddToBasket(int Id)
+        //{
+        //    Flower flower = await _context.Flowers.FindAsync(Id);
+        //    if (flower == null) return RedirectToAction("Index","Home");
+
+        //    List<BasketVM> basket;
+
+        //    var basketJson = Request.Cookies["basket"];
+        //    if (string.IsNullOrEmpty(basketJson))
+        //    {
+        //        basket = new List<BasketVM>();
+        //    }
+        //    else
+        //    {
+        //        basket = JsonConvert.DeserializeObject<List<BasketVM>>(basketJson);
+        //    }
+
+        //    var existFlower = basket.Find(b => b.Flower.Id==Id);
+        //    if (existFlower == null)
+        //    {
+        //        basket.Add(new BasketVM { Flower = flower });
+        //    }
+        //    else
+        //    {
+        //        existFlower.Count++;
+
+        //    }
+
+
+        //    Response.Cookies.Append("basket", JsonConvert.SerializeObject(basket));
+    //        return RedirectToAction("Index", "Home");
+    //}
+
+    public async Task<IActionResult> Getbasket()
+    {
+        var basketJson = Request.Cookies["basket"];
+        List<BasketVM> basket = JsonConvert.DeserializeObject<List<BasketVM>>(basketJson);
+        List<BasketVM> newBasket = new List<BasketVM>();
+        foreach (var item in basket)
         {
-            Flower flower = await _context.Flowers.FindAsync(Id);
-            if (flower == null) return RedirectToAction("Index","Home");
+            Flower flower = await _context.Flowers.FindAsync(item.Flower.Id);
+            if (flower == null)
+            {
+                continue;
+            }
+
+            newBasket.Add(new BasketVM { Flower = flower, Count = item.Count });
+        }
+        Response.Cookies.Append("basket", JsonConvert.SerializeObject(basket));
+
+        return Content(JsonConvert.SerializeObject(basket));
+    }
+
+    public async Task<JsonResult> AddToBasket(int id)
+        {
+            Flower flower = await _context.Flowers.FindAsync(id);
+
+
+            if (flower == null) return Json(404);
 
             List<BasketVM> basket;
 
@@ -36,7 +91,7 @@ namespace FrontProject.Controllers
                 basket = JsonConvert.DeserializeObject<List<BasketVM>>(basketJson);
             }
 
-            var existFlower = basket.Find(b => b.Flower.Id==Id);
+            var existFlower = basket.Find(b => b.Flower.Id == id);
             if (existFlower == null)
             {
                 basket.Add(new BasketVM { Flower = flower });
@@ -49,27 +104,7 @@ namespace FrontProject.Controllers
 
 
             Response.Cookies.Append("basket", JsonConvert.SerializeObject(basket));
-            return RedirectToAction("Index", "Home");
-        }
-
-        public async  Task<IActionResult> Getbasket()
-        {
-            var basketJson = Request.Cookies["basket"];
-            List<BasketVM> basket = JsonConvert.DeserializeObject<List<BasketVM>>(basketJson);
-            List<BasketVM> newBasket = new List<BasketVM>();
-            foreach (var item in basket)
-            {
-                Flower flower = await _context.Flowers.FindAsync(item.Flower.Id);
-                if (flower == null)
-                {
-                    continue;
-                }
-
-                newBasket.Add(new BasketVM { Flower = flower, Count = item.Count });
-            }
-            Response.Cookies.Append("basket", JsonConvert.SerializeObject(basket));
-            
-            return Content(JsonConvert.SerializeObject(basket));
+            return Json(200);
         }
     }
 }

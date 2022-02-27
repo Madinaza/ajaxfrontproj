@@ -1,0 +1,30 @@
+﻿@model Category
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-md-6 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">@Model.Name</h4>
+
+                        <p>
+                          @Html.Raw(Model.Description)
+                        </p>
+                        <p style="color:red">Silmek istediyinize eminsiniz?</p>
+
+                        <a class="btn btn-outline-secondary" asp-action="Index" asp-controller="Category">
+                            Cancel 
+                        </a>
+                        <form method="post" asp-action="Delete" asp-controller="Category">
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

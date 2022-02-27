@@ -2,34 +2,35 @@
 
 @foreach (Flower flower in Model)
 {
-    <div class="flowers-item @foreach (FlowerCategory flowerCategory in flower.FlowerCategory)
+<div class="flowers-item @foreach (FlowerCategory flowerCategory in flower.FlowerCategory)
                         {
                             @(flowerCategory.Category.Name.ToLower()+ ' ')
                         }
                         ">
-        <div class="img">
-            <a asp-action="detail" asp-controller="flower" asp-route-id="@flower.Id" asp-route-categoryId="@flower.FlowerCategory.FirstOrDefault().CategoryId" >
-                <img src="~/assets/images/@flower.MainImage" alt="" />
-            </a>
-        </div>
-        <div class="flower-body text-center">
-            <p class="flower-name">@flower.Name</p>
-            <div class="flowers-title">
-                <div class="addToCart" data-id="1" style="display: inline-block;">Add To Cart</div>
-                <div class="price-container " style="display: inline-block;">
-                    $
-                    @if (flower.DiscountPrice == null)
-                    {
-                        <span class="price">@flower.Price</span>
-                    }
-                    else
-                    {
-                        <span style="text-decoration:line-through;" class="price">@flower.Price  ,  <span style="color:red" class="price">@flower.DiscountPrice</span></span>
 
-                    }
+    <div class="img">
+        <a asp-action="detail" asp-controller="flower" asp-route-id="@flower.Id" asp-route-categoryId="@flower.FlowerCategory.FirstOrDefault().CategoryId">
+            <img src="~/assets/images/@flower.MainImage" alt="" />
+        </a>
+    </div>
+    <div class="flower-body text-center">
+        <p class="flower-name" ></p>
+        <div class="flowers-title">
+            <div id="@flower.Id" class="addToCarts" style="display: inline-block;">Add To Cart</div>
+            <div class="price-container " style="display: inline-block;">
+                $
+                @if (flower.DiscountPrice == null)
+                {
+                    <span class="price">@flower.Price</span>
+                }
+                else
+                {
+                    <span style="text-decoration:line-through;" class="price">@flower.Price  ,  <span style="color:red" class="price">@flower.DiscountPrice</span></span>
 
-                </div>
+                }
+
             </div>
         </div>
     </div>
+</div>
 }
