@@ -1,0 +1,33 @@
+﻿@model CreateMultiple
+@{
+    ViewData["Title"] = "CreateMultiple";
+}
+
+<form method="post" asp-controller="slider" asp-action="CreateMultiple" enctype="multipart/form-data" class="forms-sample">
+    <div class="form-group">
+        <label for="exampleInputUsername1">Title</label>
+        <input asp-for="Title" class="form-control" id="exampleInputUsername1" placeholder="Title">
+        <span asp-validation-for="Title"></span>
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Description</label>
+        <span asp-validation-for="Desc"></span>
+
+        <input asp-for="Desc" class="form-control" id="Description" placeholder="description">
+    </div>
+    
+    <div class="form-group">
+        <label for="exampleInputUsername1">SignatureImage</label>
+        <input accept="image/*" asp-for="SignatureImageFile" class="form-control" id="exampleInputUsername1" placeholder="SignatureImage">
+        <span asp-validation-for="SignatureImageFile"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputUsername1">Images</label>
+        <input asp-for="Images" class="form-control" id="exampleInputUsername1" placeholder="Images">
+        <span asp-validation-for="Images"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary me-2">Submit</button>
+    <button class="btn btn-light">Cancel</button>
+</form>

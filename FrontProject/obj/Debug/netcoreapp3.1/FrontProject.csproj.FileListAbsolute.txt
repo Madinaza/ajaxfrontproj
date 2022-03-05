@@ -322,3 +322,9 @@ C:\Users\User\Desktop\Yeni qovluq\FrontProject\obj\Debug\netcoreapp3.1\Razor\Are
 C:\Users\User\Desktop\Yeni qovluq\FrontProject\obj\Debug\netcoreapp3.1\Razor\Areas\Dashboard\Views\Category\Delete.cshtml.g.cs
 C:\Users\User\Desktop\Yeni qovluq\FrontProject\obj\Debug\netcoreapp3.1\Razor\Areas\Dashboard\Views\Slider\Index.cshtml.g.cs
 C:\Users\User\Desktop\Yeni qovluq\FrontProject\obj\Debug\netcoreapp3.1\Razor\Areas\Dashboard\Views\Slider\Create.cshtml.g.cs
+C:\Users\User\Desktop\Yeni qovluq\FrontProject\obj\Debug\netcoreapp3.1\Razor\Areas\Dashboard\Views\Slider\Delete.cshtml.g.cs
+C:\Users\User\Desktop\Yeni qovluq\FrontProject\obj\Debug\netcoreapp3.1\Razor\Areas\Dashboard\Views\Slider\CreateMultiple.cshtml.g.cs
+C:\Users\User\Desktop\Yeni qovluq\FrontProject\obj\Debug\netcoreapp3.1\Razor\Areas\Dashboard\Views\Layout\Index.cshtml.g.cs
+C:\Users\User\Desktop\Yeni qovluq\FrontProject\obj\Debug\netcoreapp3.1\Razor\Areas\Dashboard\Views\Layout\Create.cshtml.g.cs
+C:\Users\User\Desktop\Yeni qovluq\FrontProject\obj\Debug\netcoreapp3.1\Razor\Areas\Dashboard\Views\Layout\Update.cshtml.g.cs
+C:\Users\User\Desktop\Yeni qovluq\FrontProject\obj\Debug\netcoreapp3.1\Razor\Areas\Dashboard\Views\Layout\Delete.cshtml.g.cs

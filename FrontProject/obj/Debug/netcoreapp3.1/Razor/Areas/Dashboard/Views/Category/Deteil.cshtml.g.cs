@@ -28,13 +28,13 @@ using FrontProject.Models;
 #nullable disable
 #nullable restore
 #line 3 "C:\Users\User\Desktop\Yeni qovluq\FrontProject\Areas\Dashboard\Views\_ViewImports.cshtml"
-using FrontProject.ViewModels;
+using FrontProject.Areas.Dashboard.ViewModels;
 
 #line default
 #line hidden
 #nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0ff95713f3a685e6f4e11b37f4ed6f987bceee6a", @"/Areas/Dashboard/Views/Category/Deteil.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"818c083b310699943b2d3dc3779a7290a68f493f", @"/Areas/Dashboard/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"145e8dd52153b034bfffa5598d12e048f7dd820b", @"/Areas/Dashboard/Views/_ViewImports.cshtml")]
     public class Areas_Dashboard_Views_Category_Deteil : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<Category>
     {
         #pragma warning disable 1998

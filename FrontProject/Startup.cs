@@ -1,3 +1,4 @@
+using FrontProject.Areas.Constants;
 using FrontProject.DAL;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -8,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -15,9 +17,11 @@ namespace FrontProject
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        private readonly IWebHostEnvironment _env;
+        public Startup(IConfiguration configuration , IWebHostEnvironment env)
         {
             Configuration = configuration;
+            _env =env ;
         }
 
         public IConfiguration Configuration { get; }
@@ -32,7 +36,10 @@ namespace FrontProject
                 options.UseSqlServer(Configuration.GetConnectionString("Default"));
             }
             );
+
+            Fileconstants.ImagePath = Path.Combine(_env.WebRootPath, "assets", "images");
         }
+        
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
