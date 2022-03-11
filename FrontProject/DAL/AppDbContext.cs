@@ -1,4 +1,5 @@
 ﻿using FrontProject.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FrontProject.DAL
 {
-    public class AppDbContext:DbContext
+    public class AppDbContext:IdentityDbContext<User>
     {
         public AppDbContext(DbContextOptions<AppDbContext>options):base(options)
         {
@@ -32,5 +33,6 @@ namespace FrontProject.DAL
 
         public DbSet<Layout> Layouts { get; set; }
 
+        public object AnyAsync { get; internal set; }
     }
 }

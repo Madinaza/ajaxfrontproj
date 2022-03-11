@@ -4,6 +4,7 @@ using FrontProject.Areas.Extensions;
 using FrontProject.Areas.Utils;
 using FrontProject.DAL;
 using FrontProject.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -17,6 +18,8 @@ namespace FrontProject.Areas.Dashboard.Controllers
 {
 
     [Area("Dashboard")]
+    [Authorize(Roles = RoleConstant.Admin)]
+
     public class SliderController : Controller
     {
        

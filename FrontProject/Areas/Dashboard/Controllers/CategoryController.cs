@@ -1,5 +1,7 @@
-﻿using FrontProject.DAL;
+﻿using FrontProject.Areas.Constants;
+using FrontProject.DAL;
 using FrontProject.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -10,6 +12,8 @@ using System.Threading.Tasks;
 namespace FrontProject.Areas.Dashboard.Controllers
 {
     [Area("Dashboard")]
+    [Authorize(Roles = RoleConstant.Admin)]
+
     public class CategoryController : Controller
     {
         private readonly AppDbContext _context;

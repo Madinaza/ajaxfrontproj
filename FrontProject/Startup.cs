@@ -1,8 +1,10 @@
 using FrontProject.Areas.Constants;
 using FrontProject.DAL;
+using FrontProject.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -29,15 +31,23 @@ namespace FrontProject
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSession();
+            services.AddIdentity<User, IdentityRole>(option =>
+            {
+                option.Password.RequireDigit = true;
+                option.User.RequireUniqueEmail = true;
+            }).AddEntityFrameworkStores<AppDbContext>().AddDefaultTokenProviders();
             
-            services.AddControllersWithViews();
+
+
+
+            services.AddSession();
             services.AddDbContext<AppDbContext>(options => {
                 options.UseSqlServer(Configuration.GetConnectionString("Default"));
             }
             );
 
             Fileconstants.ImagePath = Path.Combine(_env.WebRootPath, "assets", "images");
+            services.AddControllersWithViews();
         }
         
 
@@ -56,8 +66,8 @@ namespace FrontProject
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
             app.UseRouting();
+            app.UseAuthentication();
 
             app.UseAuthorization();
 

@@ -254,7 +254,23 @@
                                 <p class="countProduct">@ViewBag.Count</p>
                             </i>
                             <div class="cart hoverBlock shopItem d-flex align-items-center">
-                                <span id="cart" class="me-1">CART</span>
+
+                                <div class="col-lg-2">
+                                    @if (!User.Identity.IsAuthenticated)
+                                    {
+
+
+                                        <a asp-action="Login" asp-controller="Account"  class="btn btn btn-outline-primary">SingIn</a>
+                                    }
+                                    else
+                                    {
+                                        <a asp-action="Logout" asp-controller="Account" class="btn btn btn-outline-danger">LogOut</a>
+
+                                    }
+
+                                </div>
+
+                                @*<span id="cart" class="me-1">CART</span>*@
                                 @*<div class="price">($ <span class="totalPrice">@ViewBag.TotalPrice</span>)</div>*@
                             </div>
                             <div class="flower-container navbar-dropdown" style="width:250px">
