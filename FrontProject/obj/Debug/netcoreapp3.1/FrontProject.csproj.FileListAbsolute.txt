@@ -287,8 +287,6 @@ C:\Users\User\Desktop\Yeni qovluq\FrontProject\obj\Debug\netcoreapp3.1\FrontProj
 C:\Users\User\Desktop\Yeni qovluq\FrontProject\obj\Debug\netcoreapp3.1\FrontProject.RazorAssemblyInfo.cache
 C:\Users\User\Desktop\Yeni qovluq\FrontProject\obj\Debug\netcoreapp3.1\FrontProject.RazorAssemblyInfo.cs
 C:\Users\User\Desktop\Yeni qovluq\FrontProject\obj\Debug\netcoreapp3.1\staticwebassets\FrontProject.StaticWebAssets.Manifest.cache
-C:\Users\User\Desktop\Yeni qovluq\FrontProject\obj\Debug\netcoreapp3.1\staticwebassets\FrontProject.StaticWebAssets.xml
-C:\Users\User\Desktop\Yeni qovluq\FrontProject\obj\Debug\netcoreapp3.1\scopedcss\bundle\FrontProject.styles.css
 C:\Users\User\Desktop\Yeni qovluq\FrontProject\obj\Debug\netcoreapp3.1\FrontProject.TagHelpers.input.cache
 C:\Users\User\Desktop\Yeni qovluq\FrontProject\obj\Debug\netcoreapp3.1\FrontProject.TagHelpers.output.cache
 C:\Users\User\Desktop\Yeni qovluq\FrontProject\obj\Debug\netcoreapp3.1\FrontProject.RazorCoreGenerate.cache
@@ -339,3 +337,8 @@ C:\Users\User\Desktop\Yeni qovluq\FrontProject\obj\Debug\netcoreapp3.1\FrontProj
 C:\Users\User\Desktop\Yeni qovluq\FrontProject\obj\Debug\netcoreapp3.1\Razor\Areas\Dashboard\Views\User\GetRoles.cshtml.g.cs
 C:\Users\User\Desktop\Yeni qovluq\FrontProject\obj\Debug\netcoreapp3.1\Razor\Areas\Dashboard\Views\User\AddRole.cshtml.g.cs
 C:\Users\User\Desktop\Yeni qovluq\FrontProject\obj\Debug\netcoreapp3.1\Razor\Areas\Dashboard\Views\User\ChangePassword.cshtml.g.cs
+C:\Users\User\Desktop\Yeni qovluq\FrontProject\obj\Debug\netcoreapp3.1\Razor\Areas\Dashboard\Views\Flower\Index.cshtml.g.cs
+C:\Users\User\Desktop\Yeni qovluq\FrontProject\obj\Debug\netcoreapp3.1\Razor\Areas\Dashboard\Views\Flower\Create.cshtml.g.cs
+C:\Users\User\Desktop\Yeni qovluq\FrontProject\obj\Debug\netcoreapp3.1\Razor\Areas\Dashboard\Views\Flower\Delete.cshtml.g.cs
+C:\Users\User\Desktop\Yeni qovluq\FrontProject\obj\Debug\netcoreapp3.1\Razor\Areas\Dashboard\Views\Flower\Deteil.cshtml.g.cs
+C:\Users\User\Desktop\Yeni qovluq\FrontProject\obj\Debug\netcoreapp3.1\Razor\Areas\Dashboard\Views\Flower\Update.cshtml.g.cs

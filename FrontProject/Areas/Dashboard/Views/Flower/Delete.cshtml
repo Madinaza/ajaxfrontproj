@@ -1,0 +1,32 @@
+﻿@model Flower
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-md-6 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">@Model.Name</h4>
+                        <p>
+                            @Model.Price
+                        </p>
+                        <p>
+                            @Model.Desc;
+                        </p>
+                        <p style="color:red">
+                            Are you sure to delete?
+                        </p>
+                    </div>
+                    <a asp-action="Index" asp-controller="Flower" class="btn btn-secondary">Cancel</a>
+                    <form method="post" asp-action="Delete"  asp-controller="Flower" asp-route-id="@Model.Id" >
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

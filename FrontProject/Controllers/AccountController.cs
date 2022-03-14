@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace FrontProject.Controllers
 {
     [Area("Dashboard")]
-    [Authorize(Roles = RoleConstant.Admin)]
+    //[Authorize(Roles = RoleConstant.Admin)]
 
     public class AccountController : Controller
     {
